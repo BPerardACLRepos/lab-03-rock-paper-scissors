@@ -59,7 +59,7 @@ function tallyScoreTracker(gameOutcome) {
     lossesSpan.textContent = `${totalLosses} (${100 * totalLosses / totalGames}%)`;
     drawsSpan.textContent = `${totalDraws} (${100 * totalDraws / totalGames}%)`;
     totalGamesSpan.textContent = `${totalGames}`;
-};
+}
 
 function updateNotificationPicture(throwSelected, imgElement) {
     //throw values: paper(0), scissors(1), rock(2)
@@ -70,7 +70,7 @@ function updateNotificationPicture(throwSelected, imgElement) {
     } else {
         imgElement.setAttribute('src', './assets/theRockBattle.png');
     }
-};
+}
 
 function updateUserNotification(decision) {
     gameControlsSection.classList.add('hide');
@@ -83,4 +83,4 @@ function updateUserNotification(decision) {
         playerThrowImg.classList.add('lose');
         computerThrowImg.classList.add('win');
     }
-};
+}

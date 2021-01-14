@@ -4,7 +4,7 @@ const test = QUnit.test;
 
 //getRandomThrow() tests
 test('function has no parameters & always returns a number', (expect) => {
-    const expected = 'number'
+    const expected = 'number';
     const actual = typeof getRandomThrow();
 
     expect.equal(actual, expected);
