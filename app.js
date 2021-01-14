@@ -17,10 +17,12 @@ const computerThrowImg = document.querySelector('#computer-throw-img');
 
 const endgameMessage = document.querySelector('#endgame-message');
 
+
 let totalWins = 0;
 let totalLosses = 0;
 let totalDraws = 0;
 
+//Click Handlers
 throwButton.addEventListener('click', () => {
     const userThrow = document.querySelector('#game-controls-section input:checked');
     if (userThrow === null) {
@@ -35,8 +37,15 @@ throwButton.addEventListener('click', () => {
     updateUserNotification(decision);
 });
 
+resetButton.addEventListener('click', () => {
+    playerThrowImg.className = '';
+    computerThrowImg.className = '';
+    document.querySelector('#game-controls-section input:checked').checked = false;
+    gameControlsSection.classList.remove('hide');
+    userNotificationSection.classList.add('hide');
+});
 
-
+//Function Declarations
 function getRandomThrow() {
     return Math.floor(Math.random() * 3);
 };
@@ -80,5 +89,3 @@ function updateUserNotification(decision) {
         computerThrowImg.classList.add('win');
     }
 };
-
-//reset this.className = '';
