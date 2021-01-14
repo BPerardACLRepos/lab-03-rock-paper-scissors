@@ -56,4 +56,5 @@ function tallyScoreTracker(gameOutcome) {
 
 function updateUserNotification(decision) {
 
+
 };
