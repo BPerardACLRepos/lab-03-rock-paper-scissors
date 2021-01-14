@@ -1,4 +1,4 @@
-import { didUserWin } from './utils.js';
+import { didUserWin } from '../utils.js';
 
 const test = QUnit.test;
 

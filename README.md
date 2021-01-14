@@ -9,7 +9,7 @@
   * rock = 2
 
 - didUserWin
- > compare user & computer throw
+ > compare (userThrow) & (computerThrow)
  > if user === computer
   * draw
   * else user + computer = decision
