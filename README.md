@@ -50,11 +50,11 @@
  > #total-games-span
   * totalWins + totalLosses + totalDraws
  > .textContent
-  * classList.remove('hide') reset
-  * classList.add('hide') throw
+  * notifications classList.remove('hide') reset
+  * controls classList.add('hide') throw
 
 - reset button functional
  > click handler
- > classList.add('hide') reset
- > classList.remove('hide') throw
+ > notifications classList.add('hide') reset
+ > controls classList.remove('hide') throw
  

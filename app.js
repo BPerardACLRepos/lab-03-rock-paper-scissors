@@ -21,3 +21,18 @@ let totalWins = 0;
 let totalLosses = 0;
 let totalDraws = 0;
 
+throwButton.addEventListener('click', () => {
+    const userThrow = document.querySelector('#game-controls-section input:checked');
+    if (userThrow === null) {
+        alert('Please choose your throw.');
+        return;
+    }
+    const computerThrow = getRandomThrow();
+    console.log(computerThrow);
+});
+
+
+
+function getRandomThrow() {
+    return Math.floor(Math.random() * 3);
+};
