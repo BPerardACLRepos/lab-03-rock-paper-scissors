@@ -39,10 +39,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: var(--gutter);
     padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
 }
 
@@ -63,10 +60,6 @@ h3 {
 
 header img {
     height: var(--header-height);
-}
-
-p {
-    margin: var(--gutter);
 }
   
 footer {

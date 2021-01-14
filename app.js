@@ -76,7 +76,6 @@ function updateUserNotification(decision) {
     gameControlsSection.classList.add('hide');
     userNotificationSection.classList.remove('hide');
     endgameMessage.textContent = decision;
-    console.log(decision);
     if (decision === `You're a machine... but the good kind!`) {
         playerThrowImg.classList.add('win');
         computerThrowImg.classList.add('lose');
