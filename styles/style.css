@@ -28,6 +28,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    background-color: #77889950;
 }
 
 section {
@@ -52,6 +53,7 @@ header {
     font-weight: bold;
     height: var(--header-height);
     box-shadow: var(--shadow);
+    background-color:  #ffc2cd;
 }
 
 h3 {
@@ -79,4 +81,16 @@ footer {
 
 .hide {
     display: none;
+}
+
+#game-controls-section input {
+    display: none;
+}
+
+#game-controls-section input:checked + img {
+    box-shadow: 0 0 15px 10px #ffc2cd;
+}
+
+img {
+    margin: 0.25rem;
 }

@@ -28,7 +28,8 @@ throwButton.addEventListener('click', () => {
         return;
     }
     const computerThrow = getRandomThrow();
-    console.log(computerThrow);
+    console.log(didUserWin(Number(userThrow.value), computerThrow));
+    console.log(Number(userThrow.value), computerThrow);
 });
 
 
