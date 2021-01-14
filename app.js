@@ -28,12 +28,32 @@ throwButton.addEventListener('click', () => {
         return;
     }
     const computerThrow = getRandomThrow();
-    console.log(didUserWin(Number(userThrow.value), computerThrow));
-    console.log(Number(userThrow.value), computerThrow);
+    const decision = didUserWin(Number(userThrow.value), computerThrow);
+    tallyScoreTracker(decision);
+
 });
 
 
 
 function getRandomThrow() {
     return Math.floor(Math.random() * 3);
+};
+
+function tallyScoreTracker(gameOutcome) {
+    if (gameOutcome === `Back to the drawing board...`) {
+        totalDraws++;
+    } else if (gameOutcome === `You're a machine... but the good kind!`) {
+        totalWins++;
+    } else {
+        totalLosses++;
+    }
+    const totalGames = totalDraws + totalWins + totalLosses;
+    winsSpan.textContent = `${totalWins} (${100 * totalWins / totalGames}%)`;
+    lossesSpan.textContent = `${totalLosses} (${100 * totalLosses / totalGames}%)`;
+    drawsSpan.textContent = `${totalDraws} (${100 * totalDraws / totalGames}%)`;
+    totalGamesSpan.textContent = `${totalGames}`;
+};
+
+function updateUserNotification(decision) {
+
 };
