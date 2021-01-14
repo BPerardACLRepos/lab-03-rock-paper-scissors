@@ -1,4 +1,4 @@
-import { didUserWin } from './utils.js';
+import { didUserWin, getRandomThrow } from './utils.js';
 
 //buttons
 const throwButton = document.querySelector('#throw-button');
@@ -46,10 +46,6 @@ resetButton.addEventListener('click', () => {
 });
 
 //Function Declarations
-function getRandomThrow() {
-    return Math.floor(Math.random() * 3);
-};
-
 function tallyScoreTracker(gameOutcome) {
     if (gameOutcome === `Back to the drawing board...`) {
         totalDraws++;

@@ -10,3 +10,7 @@ export function didUserWin(userThrow, computerThrow) {
     }
     return (userThrow === 1) ? `You're a machine... but the good kind!` : `The machines have won.`;
 }
+
+export function getRandomThrow() {
+    return Math.floor(Math.random() * 3);
+};
