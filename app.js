@@ -47,7 +47,7 @@ resetButton.addEventListener('click', () => {
 
 //Function Declarations
 function tallyScoreTracker(gameOutcome) {
-    if (gameOutcome === `Back to the drawing board...`) {
+    if (gameOutcome === `You tied, back to the drawing board...`) {
         totalDraws++;
     } else if (gameOutcome === `You're a machine... but the good kind!`) {
         totalWins++;
@@ -76,10 +76,10 @@ function updateUserNotification(decision) {
     gameControlsSection.classList.add('hide');
     userNotificationSection.classList.remove('hide');
     endgameMessage.textContent = decision;
-    if (decision === `You're a machine... but the good kind!`) {
+    if (decision === `You won! You're a machine... but the good kind!`) {
         playerThrowImg.classList.add('win');
         computerThrowImg.classList.add('lose');
-    } else if (decision === `The machines have won.`) {
+    } else if (decision === `You lost! The machines have won.`) {
         playerThrowImg.classList.add('lose');
         computerThrowImg.classList.add('win');
     }
