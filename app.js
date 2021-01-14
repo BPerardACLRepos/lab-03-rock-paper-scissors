@@ -30,7 +30,9 @@ throwButton.addEventListener('click', () => {
     const computerThrow = getRandomThrow();
     const decision = didUserWin(Number(userThrow.value), computerThrow);
     tallyScoreTracker(decision);
-
+    updateNotificationPicture(Number(userThrow.value), playerThrowImg);
+    updateNotificationPicture(computerThrow, computerThrowImg);
+    updateUserNotification(decision);
 });
 
 
@@ -54,7 +56,29 @@ function tallyScoreTracker(gameOutcome) {
     totalGamesSpan.textContent = `${totalGames}`;
 };
 
-function updateUserNotification(decision) {
-
-
+function updateNotificationPicture(throwSelected, imgElement) {
+    //throw values: paper(0), scissors(1), rock(2)
+    if (throwSelected === 0) {
+        imgElement.setAttribute('src', './assets/paperBattle.png');
+    } else if (throwSelected === 1) {
+        imgElement.setAttribute('src', './assets/scissorsBattle.png');
+    } else {
+        imgElement.setAttribute('src', './assets/theRockBattle.png');
+    }
 };
+
+function updateUserNotification(decision) {
+    gameControlsSection.classList.add('hide');
+    userNotificationSection.classList.remove('hide');
+    endgameMessage.textContent = decision;
+    console.log(decision);
+    if (decision === `You're a machine... but the good kind!`) {
+        playerThrowImg.classList.add('win');
+        computerThrowImg.classList.add('lose');
+    } else if (decision === `The machines have won.`) {
+        playerThrowImg.classList.add('lose');
+        computerThrowImg.classList.add('win');
+    }
+};
+
+//reset this.className = '';

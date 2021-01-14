@@ -93,4 +93,15 @@ footer {
 
 img {
     margin: 0.25rem;
+    width: 200px;
+}
+
+.win {
+    border: 3px solid #daa52050;
+    width: 300px
+}
+
+.lose {
+    width: 150px;
+    opacity: 0.5;
 }
