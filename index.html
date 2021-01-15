@@ -9,43 +9,56 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <title>Scissors, Paper, and The Rock</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
-        </div>
+        <h1 id="site-title">Scissors, Paper, & the Rock</h1>
     </header>
     <main>
-        <section class="main-section">
-            <img class="main-logo" src="assets/alchemy-logo.png"/>
-            <h2>
-                Welcome to Alchemy Bootstrap!
-            </h2>
-
-            <content>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam repellendus similique consectetur voluptas facilis molestiae voluptates nobis error sapiente, ad, ipsa vero non, sint eligendi? Eos praesentium iusto magnam exercitationem.
-                Earum sunt voluptatibus molestias, sint voluptatum quos reiciendis. Id asperiores deleniti dolores provident, eius, nostrum aperiam vel, optio qui illo corrupti in. Eum quam, est nemo porro sapiente excepturi assumenda.
-                Rerum unde quidem maxime. Ullam, dolores labore molestias voluptatibus adipisci quod? Quaerat nihil inventore molestiae assumenda, voluptates vel necessitatibus eligendi? Accusamus ratione eligendi reprehenderit? Beatae incidunt molestias ea soluta nulla.
-                Fugiat quae soluta voluptate mollitia praesentium modi ex illo, autem assumenda, vel aliquam fugit possimus dolorem esse corporis ipsa! Voluptatem sapiente error non, ea optio suscipit quasi maxime nobis ex?
-                Et ipsa tenetur ullam ab nesciunt quas fugit velit impedit illum esse eligendi corporis culpa praesentium aspernatur ex sint veniam quidem, doloribus corrupti hic vitae. Eum neque ducimus omnis exercitationem?
+        <section id="instructions-section">
+            <h3 id="instructions-title">Instructions</h3>
+            <p id="instructions-content">
+                The computers will eventually destroy us all, unless we learn to beat them at their own game. That's
+                why I've developed this, "Paper, Rock, Scissors Simulator 2021!" The exclamation point informs you
+                that it's extreme. The rules are pretty straightforward: scissors cuts paper, rock bashes scissors,
+                and paper just kind of sits on top of the rock (<em>rocks hate this</em>). That's pretty much it, you'd
+                think we'd use guns, bombs, or magnets to defeat the computers, but that's just fake news computers put
+                onto the internets. Train hard, you may be our final hope.
             </p>
-            <hr />
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam repellendus similique consectetur voluptas facilis molestiae voluptates nobis error sapiente, ad, ipsa vero non, sint eligendi? Eos praesentium iusto magnam exercitationem.
-                Earum sunt voluptatibus molestias, sint voluptatum quos reiciendis. Id asperiores deleniti dolores provident, eius, nostrum aperiam vel, optio qui illo corrupti in. Eum quam, est nemo porro sapiente excepturi assumenda.
-                Rerum unde quidem maxime. Ullam, dolores labore molestias voluptatibus adipisci quod? Quaerat nihil inventore molestiae assumenda, voluptates vel necessitatibus eligendi? Accusamus ratione eligendi reprehenderit? Beatae incidunt molestias ea soluta nulla.
-                Fugiat quae soluta voluptate mollitia praesentium modi ex illo, autem assumenda, vel aliquam fugit possimus dolorem esse corporis ipsa! Voluptatem sapiente error non, ea optio suscipit quasi maxime nobis ex?
-                Et ipsa tenetur ullam ab nesciunt quas fugit velit impedit illum esse eligendi corporis culpa praesentium aspernatur ex sint veniam quidem, doloribus corrupti hic vitae. Eum neque ducimus omnis exercitationem?
-            </p>
-
+        </section>
+        <section id="score-tracker-section">
+            <p id="wins">Wins: <span id="wins-span"></span></p>
+            <p id="losses">Losses: <span id="losses-span"></span></p>
+            <p id="draws">Draws: <span id="draws-span"></span></p>
+            <p id="total-games">Total Games: <span id="total-games-span"></span></p>
+        </section>
+        <section id="game-controls-section">
+            <label>
+                <input id="paper-radio" type="radio" name="game-radios" value="0" />
+                <img id="paper-img" src="./assets/paper.png" alt="paper">
+            </label>
+            <label>
+                <input id="scissors-radio" type="radio" name="game-radios" value="1" />
+                <img id="scissors-img" src="./assets/scissors.png" alt="scissors">
+            </label>
+            <label>
+                <input id="rock-radio" type="radio" name="game-radios" value="2" />
+                <img id="rock-img" src="./assets/theRock.png" alt="rock">
+            </label>
+            <button id="throw-button">Throw</button>
+        </section>
+        <section id="user-notification-section" class="hide">
+            <img id="player-throw-img" src="" alt="player's throw" />
+            <img id="computer-throw-img" src="" alt="computer's throw" />
+            <h3 id="endgame-message"></h3>
+            <button id="reset-button">Play again!!</button>
+            <button id="actual-reset">Reset</button>
         </section>
     </main>
     <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+        <div class="copy gutter-right">&copy; 2021 b-rad</div>
     </footer>
 
     <script type="module" src="app.js"></script>
