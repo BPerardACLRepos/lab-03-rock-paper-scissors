@@ -3,6 +3,7 @@ import { didUserWin, getRandomThrow } from './utils.js';
 //buttons
 const throwButton = document.querySelector('#throw-button');
 const resetButton = document.querySelector('#reset-button');
+const actualReset = document.querySelector('#actual-reset');
 //sections
 const gameControlsSection = document.querySelector('#game-controls-section');
 const userNotificationSection = document.querySelector('#user-notification-section');
@@ -47,18 +48,19 @@ resetButton.addEventListener('click', () => {
 
 //Function Declarations
 function tallyScoreTracker(gameOutcome) {
-    if (gameOutcome === `Back to the drawing board...`) {
+    if (gameOutcome === `You tied, back to the drawing board...`) {
         totalDraws++;
-    } else if (gameOutcome === `You're a machine... but the good kind!`) {
+    } else if (gameOutcome === `You won! You're a machine... but the good kind!`) {
         totalWins++;
     } else {
         totalLosses++;
     }
     const totalGames = totalDraws + totalWins + totalLosses;
-    winsSpan.textContent = `${totalWins} (${100 * totalWins / totalGames}%)`;
-    lossesSpan.textContent = `${totalLosses} (${100 * totalLosses / totalGames}%)`;
-    drawsSpan.textContent = `${totalDraws} (${100 * totalDraws / totalGames}%)`;
+    winsSpan.textContent = `${totalWins} (${Math.trunc(100 * totalWins / totalGames)}%)`;
+    lossesSpan.textContent = `${totalLosses} (${Math.trunc(100 * totalLosses / totalGames)}%)`;
+    drawsSpan.textContent = `${totalDraws} (${Math.trunc(100 * totalDraws / totalGames)}%)`;
     totalGamesSpan.textContent = `${totalGames}`;
+    console.log(totalWins);
 }
 
 function updateNotificationPicture(throwSelected, imgElement) {
@@ -76,11 +78,23 @@ function updateUserNotification(decision) {
     gameControlsSection.classList.add('hide');
     userNotificationSection.classList.remove('hide');
     endgameMessage.textContent = decision;
-    if (decision === `You're a machine... but the good kind!`) {
+    if (decision === `You won! You're a machine... but the good kind!`) {
         playerThrowImg.classList.add('win');
         computerThrowImg.classList.add('lose');
-    } else if (decision === `The machines have won.`) {
+    } else if (decision === `You lost! The machines have won.`) {
         playerThrowImg.classList.add('lose');
         computerThrowImg.classList.add('win');
     }
 }
+
+actualReset.addEventListener('click', () => {
+    totalDraws = 0;
+    totalLosses = 0;
+    totalWins = 0;
+    
+    
+    winsSpan.textContent = 0;
+    lossesSpan.textContent = 0;
+    drawsSpan.textContent = 0;
+    totalGamesSpan.textContent = 0;
+});
