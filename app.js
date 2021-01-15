@@ -2,8 +2,8 @@ import { didUserWin, getRandomThrow } from './utils.js';
 
 //buttons
 const throwButton = document.querySelector('#throw-button');
-const resetButton = document.querySelector('#reset-button');
-const actualReset = document.querySelector('#actual-reset');
+const playAgainButton = document.querySelector('#play-again-button');
+const actualReset = document.querySelector('#reset-button');
 //sections
 const gameControlsSection = document.querySelector('#game-controls-section');
 const userNotificationSection = document.querySelector('#user-notification-section');
@@ -38,12 +38,22 @@ throwButton.addEventListener('click', () => {
     updateUserNotification(decision);
 });
 
-resetButton.addEventListener('click', () => {
+playAgainButton.addEventListener('click', () => {
     playerThrowImg.className = '';
     computerThrowImg.className = '';
     document.querySelector('#game-controls-section input:checked').checked = false;
     gameControlsSection.classList.remove('hide');
     userNotificationSection.classList.add('hide');
+});
+
+actualReset.addEventListener('click', () => {
+    totalDraws = 0;
+    totalLosses = 0;
+    totalWins = 0;
+    winsSpan.textContent = 0;
+    lossesSpan.textContent = 0;
+    drawsSpan.textContent = 0;
+    totalGamesSpan.textContent = 0;
 });
 
 //Function Declarations
@@ -86,15 +96,3 @@ function updateUserNotification(decision) {
         computerThrowImg.classList.add('win');
     }
 }
-
-actualReset.addEventListener('click', () => {
-    totalDraws = 0;
-    totalLosses = 0;
-    totalWins = 0;
-    
-    
-    winsSpan.textContent = 0;
-    lossesSpan.textContent = 0;
-    drawsSpan.textContent = 0;
-    totalGamesSpan.textContent = 0;
-});
