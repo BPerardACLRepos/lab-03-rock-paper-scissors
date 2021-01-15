@@ -64,11 +64,11 @@ function tallyScoreTracker(gameOutcome) {
 function updateNotificationPicture(throwSelected, imgElement) {
     //throw values: paper(0), scissors(1), rock(2)
     if (throwSelected === 0) {
-        imgElement.setAttribute('src', './assets/paperBattle.png');
+        imgElement.src = './assets/paperBattle.png';
     } else if (throwSelected === 1) {
-        imgElement.setAttribute('src', './assets/scissorsBattle.png');
+        imgElement.src = './assets/scissorsBattle.png';
     } else {
-        imgElement.setAttribute('src', './assets/theRockBattle.png');
+        imgElement.src = './assets/theRockBattle.png';
     }
 }
 
