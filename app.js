@@ -3,7 +3,7 @@ import { didUserWin, getRandomThrow } from './utils.js';
 //buttons
 const throwButton = document.querySelector('#throw-button');
 const playAgainButton = document.querySelector('#play-again-button');
-const actualReset = document.querySelector('#reset-button');
+const resetButton = document.querySelector('#reset-button');
 //sections
 const gameControlsSection = document.querySelector('#game-controls-section');
 const userNotificationSection = document.querySelector('#user-notification-section');
@@ -46,7 +46,7 @@ playAgainButton.addEventListener('click', () => {
     userNotificationSection.classList.add('hide');
 });
 
-actualReset.addEventListener('click', () => {
+resetButton.addEventListener('click', () => {
     totalDraws = 0;
     totalLosses = 0;
     totalWins = 0;
