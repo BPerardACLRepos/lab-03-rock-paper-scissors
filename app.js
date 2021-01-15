@@ -50,16 +50,17 @@ resetButton.addEventListener('click', () => {
 function tallyScoreTracker(gameOutcome) {
     if (gameOutcome === `You tied, back to the drawing board...`) {
         totalDraws++;
-    } else if (gameOutcome === `You're a machine... but the good kind!`) {
+    } else if (gameOutcome === `You won! You're a machine... but the good kind!`) {
         totalWins++;
     } else {
         totalLosses++;
     }
     const totalGames = totalDraws + totalWins + totalLosses;
-    winsSpan.textContent = `${totalWins} (${100 * totalWins / totalGames}%)`;
-    lossesSpan.textContent = `${totalLosses} (${100 * totalLosses / totalGames}%)`;
-    drawsSpan.textContent = `${totalDraws} (${100 * totalDraws / totalGames}%)`;
+    winsSpan.textContent = `${totalWins} (${Math.trunc(100 * totalWins / totalGames)}%)`;
+    lossesSpan.textContent = `${totalLosses} (${Math.trunc(100 * totalLosses / totalGames)}%)`;
+    drawsSpan.textContent = `${totalDraws} (${Math.trunc(100 * totalDraws / totalGames)}%)`;
     totalGamesSpan.textContent = `${totalGames}`;
+    console.log(totalWins);
 }
 
 function updateNotificationPicture(throwSelected, imgElement) {
