@@ -3,6 +3,7 @@ import { didUserWin, getRandomThrow } from './utils.js';
 //buttons
 const throwButton = document.querySelector('#throw-button');
 const resetButton = document.querySelector('#reset-button');
+const actualReset = document.querySelector('#actual-reset');
 //sections
 const gameControlsSection = document.querySelector('#game-controls-section');
 const userNotificationSection = document.querySelector('#user-notification-section');
@@ -84,3 +85,15 @@ function updateUserNotification(decision) {
         computerThrowImg.classList.add('win');
     }
 }
+
+actualReset.addEventListener('click', () => {
+    totalDraws = 0;
+    totalLosses = 0;
+    totalWins = 0;
+    
+    
+    winsSpan.textContent = 0;
+    lossesSpan.textContent = 0;
+    drawsSpan.textContent = 0;
+    totalGamesSpan.textContent = 0;
+});
